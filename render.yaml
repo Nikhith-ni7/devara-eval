@@ -1,0 +1,19 @@
+# Free preview: SQLite history is ephemeral. See HOSTING.md for persistence.
+services:
+  - type: web
+    name: devara-eval
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: EVAL_HOSTED
+        value: "1"
+      - key: EVAL_USERNAME
+        value: owner
+      - key: EVAL_PASSWORD
+        generateValue: true
+      - key: EVAL_STORAGE_EPHEMERAL
+        value: "1"
+      - key: EVAL_DB
+        value: /app/storage/eval.sqlite3

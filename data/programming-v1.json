@@ -1,0 +1,1139 @@
+{
+  "version": "programming-v1.0.0",
+  "cases": [
+    {
+      "id": "prog-001",
+      "category": "Python",
+      "question": "Explain the difference between a Python list and a tuple.",
+      "facts": [
+        {
+          "label": "mutable",
+          "any_of": [
+            "mutable"
+          ]
+        },
+        {
+          "label": "immutable",
+          "any_of": [
+            "immutable"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check the distinction between container immutability and mutable nested values."
+    },
+    {
+      "id": "prog-002",
+      "category": "Python",
+      "question": "Why is a mutable default argument dangerous in Python? Show a safe alternative.",
+      "facts": [
+        {
+          "label": "definition",
+          "any_of": [
+            "definition"
+          ]
+        },
+        {
+          "label": "None",
+          "any_of": [
+            "None"
+          ]
+        }
+      ],
+      "require_code": true,
+      "min_words": 15,
+      "review_notes": "Verify a fresh list is created only when omitted; preserve an explicitly supplied empty list."
+    },
+    {
+      "id": "prog-003",
+      "category": "Python",
+      "question": "How does a Python generator differ from a list?",
+      "facts": [
+        {
+          "label": "yield",
+          "any_of": [
+            "yield"
+          ]
+        },
+        {
+          "label": "lazy",
+          "any_of": [
+            "lazy"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check one-shot iteration and avoid claiming all generators use constant memory."
+    },
+    {
+      "id": "prog-004",
+      "category": "Python",
+      "question": "What does tuple immutability mean when a tuple contains a list?",
+      "facts": [
+        {
+          "label": "immutable",
+          "any_of": [
+            "immutable"
+          ]
+        },
+        {
+          "label": "mutable",
+          "any_of": [
+            "mutable"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Require a correct explanation of nested mutation versus item assignment."
+    },
+    {
+      "id": "prog-005",
+      "category": "Python",
+      "question": "Explain shallow copying versus deep copying in Python.",
+      "facts": [
+        {
+          "label": "nested",
+          "any_of": [
+            "nested"
+          ]
+        },
+        {
+          "label": "recursive",
+          "any_of": [
+            "recursive",
+            "recursively"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check aliases and note that deep copy is not universally appropriate for resources."
+    },
+    {
+      "id": "prog-006",
+      "category": "Python",
+      "question": "When should you use the with statement for a file? Show an example.",
+      "facts": [
+        {
+          "label": "context manager",
+          "any_of": [
+            "context manager"
+          ]
+        },
+        {
+          "label": "close",
+          "any_of": [
+            "close",
+            "closed"
+          ]
+        }
+      ],
+      "require_code": true,
+      "min_words": 15,
+      "review_notes": "Check exception cleanup and the difference between cleanup and exception suppression."
+    },
+    {
+      "id": "prog-007",
+      "category": "Python",
+      "question": "What is the difference between is and == in Python?",
+      "facts": [
+        {
+          "label": "identity",
+          "any_of": [
+            "identity"
+          ]
+        },
+        {
+          "label": "value",
+          "any_of": [
+            "value",
+            "values"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Reject recommendations to use identity for ordinary string or numeric equality."
+    },
+    {
+      "id": "prog-008",
+      "category": "Python",
+      "question": "How do try, except, and finally work together in Python?",
+      "facts": [
+        {
+          "label": "exception",
+          "any_of": [
+            "exception"
+          ]
+        },
+        {
+          "label": "finally",
+          "any_of": [
+            "finally"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that process termination is outside ordinary finally guarantees."
+    },
+    {
+      "id": "prog-009",
+      "category": "Python",
+      "question": "Explain async and await in Python and one blocking-call pitfall.",
+      "facts": [
+        {
+          "label": "event loop",
+          "any_of": [
+            "event loop"
+          ]
+        },
+        {
+          "label": "blocking",
+          "any_of": [
+            "blocking"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that async alone does not parallelize CPU-bound Python code."
+    },
+    {
+      "id": "prog-010",
+      "category": "Python",
+      "question": "Explain Python dictionary lookup complexity and its worst case.",
+      "facts": [
+        {
+          "label": "average",
+          "any_of": [
+            "average"
+          ]
+        },
+        {
+          "label": "O(n)",
+          "any_of": [
+            "O(n)"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Require distinction between average and worst-case complexity."
+    },
+    {
+      "id": "prog-011",
+      "category": "Java",
+      "question": "Explain equals and hashCode and their contract in Java.",
+      "facts": [
+        {
+          "label": "equals",
+          "any_of": [
+            "equals"
+          ]
+        },
+        {
+          "label": "hashCode",
+          "any_of": [
+            "hashCode"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check equal implies same hash, not the converse."
+    },
+    {
+      "id": "prog-012",
+      "category": "Java",
+      "question": "Compare ArrayList and LinkedList for indexed access.",
+      "facts": [
+        {
+          "label": "O(1)",
+          "any_of": [
+            "O(1)"
+          ]
+        },
+        {
+          "label": "O(n)",
+          "any_of": [
+            "O(n)"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Reject the blanket claim that LinkedList insertions are always faster."
+    },
+    {
+      "id": "prog-013",
+      "category": "Java",
+      "question": "Explain checked versus unchecked exceptions in Java.",
+      "facts": [
+        {
+          "label": "checked",
+          "any_of": [
+            "checked"
+          ]
+        },
+        {
+          "label": "RuntimeException",
+          "any_of": [
+            "RuntimeException"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Ensure checked does not mean the exception happens at compile time."
+    },
+    {
+      "id": "prog-014",
+      "category": "Java",
+      "question": "What does dependency injection mean in a Java application?",
+      "facts": [
+        {
+          "label": "dependency",
+          "any_of": [
+            "dependency"
+          ]
+        },
+        {
+          "label": "constructor",
+          "any_of": [
+            "constructor"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check separation of construction and behavior; no framework is required."
+    },
+    {
+      "id": "prog-015",
+      "category": "Java",
+      "question": "Why is a Java String described as immutable?",
+      "facts": [
+        {
+          "label": "immutable",
+          "any_of": [
+            "immutable"
+          ]
+        },
+        {
+          "label": "new",
+          "any_of": [
+            "new"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Distinguish reassignment of a variable from mutation of its String object."
+    },
+    {
+      "id": "prog-016",
+      "category": "JavaScript",
+      "question": "Explain let and const in JavaScript.",
+      "facts": [
+        {
+          "label": "block",
+          "any_of": [
+            "block"
+          ]
+        },
+        {
+          "label": "reassignment",
+          "any_of": [
+            "reassignment"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Do not equate const with deeply immutable object data."
+    },
+    {
+      "id": "prog-017",
+      "category": "JavaScript",
+      "question": "Explain promises and async/await in JavaScript.",
+      "facts": [
+        {
+          "label": "promise",
+          "any_of": [
+            "promise"
+          ]
+        },
+        {
+          "label": "rejection",
+          "any_of": [
+            "rejection"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check rejection handling and return semantics."
+    },
+    {
+      "id": "prog-018",
+      "category": "JavaScript",
+      "question": "What is a closure in JavaScript?",
+      "facts": [
+        {
+          "label": "function",
+          "any_of": [
+            "function"
+          ]
+        },
+        {
+          "label": "lexical",
+          "any_of": [
+            "lexical"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check lexical scope rather than dynamic caller scope."
+    },
+    {
+      "id": "prog-019",
+      "category": "JavaScript",
+      "question": "Compare == and === in JavaScript.",
+      "facts": [
+        {
+          "label": "coercion",
+          "any_of": [
+            "coercion"
+          ]
+        },
+        {
+          "label": "type",
+          "any_of": [
+            "type"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Mention NaN and object identity if examples rely on them."
+    },
+    {
+      "id": "prog-020",
+      "category": "JavaScript",
+      "question": "Why should list elements have stable keys in React?",
+      "facts": [
+        {
+          "label": "stable",
+          "any_of": [
+            "stable"
+          ]
+        },
+        {
+          "label": "identity",
+          "any_of": [
+            "identity"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check keys are unique among siblings and do not need global uniqueness."
+    },
+    {
+      "id": "prog-021",
+      "category": "SQL",
+      "question": "Explain INNER JOIN and LEFT JOIN.",
+      "facts": [
+        {
+          "label": "matching",
+          "any_of": [
+            "matching"
+          ]
+        },
+        {
+          "label": "NULL",
+          "any_of": [
+            "NULL"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that WHERE conditions can inadvertently remove unmatched left rows."
+    },
+    {
+      "id": "prog-022",
+      "category": "SQL",
+      "question": "Write SQL to count employees per department, including departments with zero employees.",
+      "facts": [
+        {
+          "label": "LEFT JOIN",
+          "any_of": [
+            "LEFT JOIN"
+          ]
+        },
+        {
+          "label": "COUNT",
+          "any_of": [
+            "COUNT"
+          ]
+        }
+      ],
+      "require_code": true,
+      "min_words": 15,
+      "review_notes": "COUNT(*) is incorrect for the zero-employee requirement."
+    },
+    {
+      "id": "prog-023",
+      "category": "SQL",
+      "question": "What are the benefits and costs of database indexes?",
+      "facts": [
+        {
+          "label": "read",
+          "any_of": [
+            "read",
+            "reads"
+          ]
+        },
+        {
+          "label": "write",
+          "any_of": [
+            "write",
+            "writes"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check workload and selectivity instead of claiming every read becomes faster."
+    },
+    {
+      "id": "prog-024",
+      "category": "SQL",
+      "question": "What do ACID transaction properties stand for?",
+      "facts": [
+        {
+          "label": "atomicity",
+          "any_of": [
+            "atomicity"
+          ]
+        },
+        {
+          "label": "consistency",
+          "any_of": [
+            "consistency"
+          ]
+        },
+        {
+          "label": "isolation",
+          "any_of": [
+            "isolation"
+          ]
+        },
+        {
+          "label": "durability",
+          "any_of": [
+            "durability"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Ensure consistency is about invariants and isolation varies by level."
+    },
+    {
+      "id": "prog-025",
+      "category": "SQL",
+      "question": "Explain SQL injection and show parameterized querying in Python sqlite3.",
+      "facts": [
+        {
+          "label": "parameter",
+          "any_of": [
+            "parameter",
+            "parameters",
+            "parameterized"
+          ]
+        },
+        {
+          "label": "concatenation",
+          "any_of": [
+            "concatenation"
+          ]
+        }
+      ],
+      "require_code": true,
+      "min_words": 15,
+      "review_notes": "Check actual binding, not string formatting or manual quote escaping."
+    },
+    {
+      "id": "prog-026",
+      "category": "Algorithms",
+      "question": "Explain binary search requirements and complexity.",
+      "facts": [
+        {
+          "label": "sorted",
+          "any_of": [
+            "sorted"
+          ]
+        },
+        {
+          "label": "O(log n)",
+          "any_of": [
+            "O(log n)"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check boundary updates and avoid asserting logarithmic linked-list runtime."
+    },
+    {
+      "id": "prog-027",
+      "category": "Algorithms",
+      "question": "Compare breadth-first and depth-first graph search.",
+      "facts": [
+        {
+          "label": "queue",
+          "any_of": [
+            "queue"
+          ]
+        },
+        {
+          "label": "stack",
+          "any_of": [
+            "stack"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check shortest-path claim is restricted to unweighted/equal-weight edges."
+    },
+    {
+      "id": "prog-028",
+      "category": "Algorithms",
+      "question": "How do you detect a cycle in a linked list with constant extra space?",
+      "facts": [
+        {
+          "label": "slow",
+          "any_of": [
+            "slow"
+          ]
+        },
+        {
+          "label": "fast",
+          "any_of": [
+            "fast"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check empty lists, one-node cycles, and null guards."
+    },
+    {
+      "id": "prog-029",
+      "category": "Algorithms",
+      "question": "Describe the hash-map solution to the two-sum problem.",
+      "facts": [
+        {
+          "label": "complement",
+          "any_of": [
+            "complement"
+          ]
+        },
+        {
+          "label": "O(n)",
+          "any_of": [
+            "O(n)"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check duplicate values and insertion order so an element is not reused."
+    },
+    {
+      "id": "prog-030",
+      "category": "Algorithms",
+      "question": "Explain a recursion base case and why it matters.",
+      "facts": [
+        {
+          "label": "base case",
+          "any_of": [
+            "base case"
+          ]
+        },
+        {
+          "label": "termination",
+          "any_of": [
+            "termination"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "A base case existing is insufficient if it is unreachable."
+    },
+    {
+      "id": "prog-031",
+      "category": "APIs",
+      "question": "What does idempotency mean for an HTTP operation?",
+      "facts": [
+        {
+          "label": "same effect",
+          "any_of": [
+            "same effect"
+          ]
+        },
+        {
+          "label": "repeated",
+          "any_of": [
+            "repeated"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check effect versus response equality and distinguish safety from idempotency."
+    },
+    {
+      "id": "prog-032",
+      "category": "APIs",
+      "question": "Explain HTTP 400, 401, 403, and 404.",
+      "facts": [
+        {
+          "label": "authentication",
+          "any_of": [
+            "authentication"
+          ]
+        },
+        {
+          "label": "permission",
+          "any_of": [
+            "permission",
+            "permissions"
+          ]
+        },
+        {
+          "label": "not found",
+          "any_of": [
+            "not found"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that 401 is not synonymous with authorization denial."
+    },
+    {
+      "id": "prog-033",
+      "category": "APIs",
+      "question": "Compare offset and cursor pagination.",
+      "facts": [
+        {
+          "label": "offset",
+          "any_of": [
+            "offset"
+          ]
+        },
+        {
+          "label": "cursor",
+          "any_of": [
+            "cursor"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that cursor consistency still depends on ordering and data changes."
+    },
+    {
+      "id": "prog-034",
+      "category": "APIs",
+      "question": "Why do network clients need timeouts and bounded retries?",
+      "facts": [
+        {
+          "label": "timeout",
+          "any_of": [
+            "timeout"
+          ]
+        },
+        {
+          "label": "backoff",
+          "any_of": [
+            "backoff"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check retry budgets, non-retryable failures, and end-to-end deadlines."
+    },
+    {
+      "id": "prog-035",
+      "category": "APIs",
+      "question": "Explain input validation at an API boundary.",
+      "facts": [
+        {
+          "label": "type",
+          "any_of": [
+            "type",
+            "types"
+          ]
+        },
+        {
+          "label": "constraint",
+          "any_of": [
+            "constraint",
+            "constraints"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Distinguish schema validation from business validation and authorization."
+    },
+    {
+      "id": "prog-036",
+      "category": "Testing",
+      "question": "Compare unit tests and integration tests.",
+      "facts": [
+        {
+          "label": "unit",
+          "any_of": [
+            "unit"
+          ]
+        },
+        {
+          "label": "integration",
+          "any_of": [
+            "integration"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check behavioral scope and avoid claiming all unit tests require mocks."
+    },
+    {
+      "id": "prog-037",
+      "category": "Testing",
+      "question": "Explain mocking an external API in automated tests.",
+      "facts": [
+        {
+          "label": "controlled",
+          "any_of": [
+            "controlled"
+          ]
+        },
+        {
+          "label": "network",
+          "any_of": [
+            "network"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Ensure mocks cannot alone prove compatibility with a live service."
+    },
+    {
+      "id": "prog-038",
+      "category": "Testing",
+      "question": "What is a regression test?",
+      "facts": [
+        {
+          "label": "previously",
+          "any_of": [
+            "previously"
+          ]
+        },
+        {
+          "label": "change",
+          "any_of": [
+            "change"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check that a newly failing test is not automatically evidence of an unintended regression."
+    },
+    {
+      "id": "prog-039",
+      "category": "Testing",
+      "question": "Explain boundary-value testing with an example.",
+      "facts": [
+        {
+          "label": "boundary",
+          "any_of": [
+            "boundary"
+          ]
+        },
+        {
+          "label": "invalid",
+          "any_of": [
+            "invalid"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check inclusive/exclusive definitions and invalid input handling."
+    },
+    {
+      "id": "prog-040",
+      "category": "Testing",
+      "question": "Why can code coverage be high while software is still incorrect?",
+      "facts": [
+        {
+          "label": "executed",
+          "any_of": [
+            "executed"
+          ]
+        },
+        {
+          "label": "assertions",
+          "any_of": [
+            "assertions"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Reject using a coverage percentage as a correctness percentage."
+    },
+    {
+      "id": "prog-041",
+      "category": "Security",
+      "question": "Explain authentication versus authorization.",
+      "facts": [
+        {
+          "label": "identity",
+          "any_of": [
+            "identity"
+          ]
+        },
+        {
+          "label": "permission",
+          "any_of": [
+            "permission",
+            "permissions"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check authorization on each protected resource, not just at login."
+    },
+    {
+      "id": "prog-042",
+      "category": "Security",
+      "question": "How should passwords be stored by an application?",
+      "facts": [
+        {
+          "label": "salt",
+          "any_of": [
+            "salt"
+          ]
+        },
+        {
+          "label": "hash",
+          "any_of": [
+            "hash",
+            "hashing"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Require a password-specific KDF; fast general hashes alone are inadequate."
+    },
+    {
+      "id": "prog-043",
+      "category": "Security",
+      "question": "What is the principle of least privilege?",
+      "facts": [
+        {
+          "label": "minimum",
+          "any_of": [
+            "minimum"
+          ]
+        },
+        {
+          "label": "permission",
+          "any_of": [
+            "permission",
+            "permissions"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check scope, duration, and service accounts as well as human users."
+    },
+    {
+      "id": "prog-044",
+      "category": "Security",
+      "question": "What is cross-site scripting and how can output encoding help?",
+      "facts": [
+        {
+          "label": "untrusted",
+          "any_of": [
+            "untrusted"
+          ]
+        },
+        {
+          "label": "context",
+          "any_of": [
+            "context"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check HTML, attributes, URLs, and script contexts have different rules."
+    },
+    {
+      "id": "prog-045",
+      "category": "Security",
+      "question": "How should application API keys be handled in a source repository?",
+      "facts": [
+        {
+          "label": "environment",
+          "any_of": [
+            "environment",
+            "secret manager"
+          ]
+        },
+        {
+          "label": "rotate",
+          "any_of": [
+            "rotate"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check history and logs, and do not recommend committing a real key in an example file."
+    },
+    {
+      "id": "prog-046",
+      "category": "Systems",
+      "question": "Explain a race condition and how a lock can help.",
+      "facts": [
+        {
+          "label": "concurrent",
+          "any_of": [
+            "concurrent"
+          ]
+        },
+        {
+          "label": "critical section",
+          "any_of": [
+            "critical section"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check lock scope, deadlock risk, and atomicity of a multi-step operation."
+    },
+    {
+      "id": "prog-047",
+      "category": "Systems",
+      "question": "Compare a process and a thread.",
+      "facts": [
+        {
+          "label": "memory",
+          "any_of": [
+            "memory"
+          ]
+        },
+        {
+          "label": "process",
+          "any_of": [
+            "process"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check isolation and do not confuse concurrency with guaranteed parallel execution."
+    },
+    {
+      "id": "prog-048",
+      "category": "Systems",
+      "question": "Explain cache invalidation and stale data.",
+      "facts": [
+        {
+          "label": "stale",
+          "any_of": [
+            "stale"
+          ]
+        },
+        {
+          "label": "TTL",
+          "any_of": [
+            "TTL",
+            "time to live"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check TTL limits age but does not ensure perfect consistency."
+    },
+    {
+      "id": "prog-049",
+      "category": "Systems",
+      "question": "What is a database connection pool?",
+      "facts": [
+        {
+          "label": "reuse",
+          "any_of": [
+            "reuse"
+          ]
+        },
+        {
+          "label": "limit",
+          "any_of": [
+            "limit",
+            "limits"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check transaction reset and returning connections after exceptions."
+    },
+    {
+      "id": "prog-050",
+      "category": "Systems",
+      "question": "Explain structured logging and why request IDs are useful.",
+      "facts": [
+        {
+          "label": "structured",
+          "any_of": [
+            "structured"
+          ]
+        },
+        {
+          "label": "request",
+          "any_of": [
+            "request"
+          ]
+        }
+      ],
+      "require_code": false,
+      "min_words": 15,
+      "review_notes": "Check correlation identifiers are propagated and logs do not leak secrets."
+    }
+  ]
+}

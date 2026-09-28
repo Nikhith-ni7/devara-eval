@@ -1,0 +1,56 @@
+[
+  {
+    "id": "demo-baseline-v1",
+    "provider": "demo",
+    "model": "fixture-v1",
+    "system_prompt": "You are Devara, a programming assistant. Answer the question accurately.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "baseline"
+  },
+  {
+    "id": "demo-candidate-v1",
+    "provider": "demo",
+    "model": "fixture-v1",
+    "system_prompt": "You are Devara, a programming assistant. Give an accurate direct answer, explain relevant edge cases, and include a fenced code example when the question asks for one. Do not invent facts.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "candidate"
+  },
+  {
+    "id": "ollama-baseline-v1",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:7b",
+    "system_prompt": "You are Devara, a programming assistant. Answer the question accurately.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "baseline"
+  },
+  {
+    "id": "ollama-candidate-v1",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:7b",
+    "system_prompt": "You are Devara, a programming assistant. Give an accurate direct answer, explain relevant edge cases, and include a fenced code example when the question asks for one. Do not invent facts.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "candidate"
+  },
+  {
+    "id": "devara-baseline-v1",
+    "provider": "devara",
+    "model": "devara-local",
+    "system_prompt": "You are Devara, a programming assistant. Answer the question accurately.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "baseline"
+  },
+  {
+    "id": "devara-candidate-v1",
+    "provider": "devara",
+    "model": "devara-local",
+    "system_prompt": "You are Devara, a programming assistant. Give an accurate direct answer, explain relevant edge cases, and include a fenced code example when the question asks for one. Do not invent facts.",
+    "temperature": 0,
+    "seed": 42,
+    "demo_variant": "candidate"
+  }
+]

@@ -1,0 +1,113 @@
+# Publish a live Devara Eval app
+
+Use **GitHub for the source repository** and **Render for the running app**. Render serves both React and FastAPI from one HTTPS address. GitHub Pages alone cannot run the Python API or SQLite database, so do not turn on Pages for this version.
+
+This download includes `Dockerfile`, `.dockerignore`, `render.yaml`, a cloud startup script, and a password-protected hosted mode. Local startup stays available.
+
+## 1. Upload to GitHub
+
+Use the updated download, not the original v1 archive. Unzip it into a new folder so you do not accidentally upload your local Python environment or private run database.
+
+Open https://github.com/new while signed in:
+
+- Repository name: `devara-eval`
+- Description: `AI response evaluation and regression testing with FastAPI, React, and SQLite`
+- Choose Public if you want recruiters to inspect the source, or Private if you prefer.
+- Leave GitHub's initialization options unchecked; this project already has a README and ignore file.
+
+### Upload through the browser
+
+After creating the empty repository, choose **uploading an existing file**. Upload the contents of the extracted `devara-eval` folder, not the ZIP and not the enclosing folder. `Dockerfile`, `render.yaml`, and `README.md` must appear at the repository root.
+
+On macOS, Command+Shift+Period shows hidden files in Finder. Include `.github`, `.gitignore`, and `.dockerignore` with the upload. Do not upload `.venv`, `node_modules`, `storage`, or an actual `.env` file. The supplied ZIP omits runtime databases, secrets, and installed dependencies.
+
+### Alternatively, use Git
+
+Run from the extracted folder. Substitute your actual repository URL for `YOUR_GITHUB_USERNAME`:
+
+```bash
+git init
+git add .
+git commit -m "Add Devara Eval with hosted deployment support"
+git branch -M main
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/devara-eval.git
+git push -u origin main
+```
+
+These commands assume a new local repository. If you already have a repository or remote, keep using it instead of adding another `origin`. For authentication, use GitHub Desktop, GitHub CLI, or your configured credential manager; do not paste access tokens into chat or commit them.
+
+## 2. Deploy on Render
+
+1. Sign in at https://dashboard.render.com using your GitHub account, and authorize access to the `devara-eval` repository.
+2. Select **New → Blueprint** and choose that repository.
+3. Render should find the root `render.yaml` automatically.
+4. Review the service: Docker runtime, **Free** instance, health check `/api/health`.
+5. Apply the Blueprint. Render builds the React dashboard and Python service from source.
+6. When the service status is Live, open the HTTPS URL Render provides.
+
+The Blueprint explicitly selects the Free instance and creates no paid disk or database. Render's free-tier allowances and overage policies still apply; review your account's current billing/spend settings.
+
+## 3. Sign in to the app
+
+The browser asks for a username and password:
+
+- Username: **owner**
+- Password: the generated **EVAL_PASSWORD** value in the Render service's **Environment** settings
+
+View the value in your own Render dashboard. Do not publish it in GitHub, paste it in chat, or put it in the URL. The app does not print it in responses. Your browser remembers Basic authentication for the session; use a private browser window if you need a clean login. This is single-owner access, not individual user accounts.
+
+Click **Run demo comparison**. The live demo needs no model API key and uses synthetic answers. All comparisons, reviews, and exports execute through the hosted Python backend. Actual Devara still needs the connection described in `docs/DEVARA_INTEGRATION.md`.
+
+## Important: free preview storage
+
+The default hosted preview uses SQLite on Render's temporary filesystem. **History, custom prompt versions, and reviews can disappear on restart, redeploy, or idle spin-down.** The dashboard displays this limitation. Export important runs and reports; do not treat the free preview as durable storage.
+
+Free services can sleep after inactivity and take time to wake. This does not mean the repository or app has been deleted.
+
+For durable history, use a paid web service with a persistent disk mounted at `/app/storage`, ensuring the directory is writable by container user UID 10001, and set `EVAL_STORAGE_EPHEMERAL=0`. Keep `EVAL_DB=/app/storage/eval.sqlite3`. Choose that paid option deliberately in Render; this Blueprint does not enable it. Export existing data before changing plans or storage. For multi-user scaling, migrate to PostgreSQL and a durable job queue instead of adding replicas to this SQLite deployment.
+
+## Hosting settings
+
+| Variable | Purpose |
+|---|---|
+| `EVAL_HOSTED=1` | Require authentication; automatically enabled inside the Docker image |
+| `EVAL_USERNAME` | Login name, default `owner` |
+| `EVAL_PASSWORD` | Required secret, at least 16 characters; generated by Render |
+| `EVAL_STORAGE_EPHEMERAL=1` | Show the temporary-history banner |
+| `EVAL_DB` | SQLite database file location |
+| `RENDER_EXTERNAL_HOSTNAME` | Automatically supplied by Render and trusted by the app |
+| `EVAL_PUBLIC_URL` | Optional HTTPS origin for your custom domain |
+| `PORT` | Listening port supplied by the host |
+| `DEVARA_URL`, `DEVARA_API_KEY` | Optional real bot endpoint and server-side secret |
+
+A hosted container without a configured password refuses to start. All application routes, static assets, API documentation, and stored answers require authentication; only `/api/health` is public. Cross-origin writes are rejected. Keep the single worker setting because the queue lives in process memory.
+
+An Ollama service on your Mac is not available at the hosted container's `127.0.0.1`. Real model evaluation requires a service reachable from the host and appropriate authentication; this free instance is not sized to run a local language model itself.
+
+## Update the live app
+
+Commit/push changes to the connected GitHub branch. Render can redeploy the service from that branch. Keep secrets in the service's environment settings and never include local run data in commits.
+
+For a portfolio link, use the actual Render URL once deployment succeeds. The GitHub repository link lets people review the implementation; it is not the running app URL. The hosted app requires a login, so use screenshots and published synthetic reports for a public preview unless you deliberately grant app access.
+
+## Local Docker check (optional)
+
+With Docker installed:
+
+```bash
+docker build -t devara-eval .
+read -s -p "Choose a password of at least 16 characters: " EVAL_PASSWORD
+export EVAL_PASSWORD
+docker run --rm -p 8000:10000 -e EVAL_PASSWORD devara-eval
+```
+
+Run the `read` command in bash. Open http://localhost:8000 and sign in as `owner`. For the hosted website, use the provider's HTTPS URL.
+
+## References
+
+- https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+- https://render.com/docs/deploy-fastapi
+- https://render.com/docs/docker
+- https://render.com/docs/blueprint-spec
+- https://render.com/docs/free
+- https://render.com/docs/disks

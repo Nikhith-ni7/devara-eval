@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "Demo launch and 50 results",
+    "Five regression rows",
+    "Answer detail",
+    "Review persistence",
+    "JSON download",
+    "Dataset view",
+    "Immutable prompt creation",
+    "Run history",
+    "Mobile overflow",
+    "Reload persistence",
+    "No browser exceptions"
+  ]
+}
